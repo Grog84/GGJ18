@@ -12,7 +12,6 @@ public class SwitchScript : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
     }
 
     void Update()
