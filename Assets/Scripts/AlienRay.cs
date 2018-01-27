@@ -5,6 +5,7 @@ using UnityEngine;
 public class AlienRay : MonoBehaviour
 {
     public float speed;
+    public float verticalSpeed;
     public Transform player;
 
     public Vector3 offset;
@@ -12,6 +13,10 @@ public class AlienRay : MonoBehaviour
 
     public bool hasReachedGround;
     public bool hasReachedTop;
+
+    public bool chargeReady = true;
+    public float maxCharge = 4f;
+
 
     private void Start()
     {
@@ -27,25 +32,35 @@ public class AlienRay : MonoBehaviour
 
     private void Move()
     {
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.position = new Vector3(transform.position.x + speed, transform.position.y, transform.position.z);
-        }
 
-        else if (Input.GetKey(KeyCode.A))
+        if (Input.GetAxis("Jump") > 0 && chargeReady)
         {
-            transform.position = new Vector3(transform.position.x - speed, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x + speed * Input.GetAxis("Horizontal") * Time.deltaTime, transform.position.y + verticalSpeed * Time.deltaTime, transform.position.z);
+            maxCharge -= Time.deltaTime;
+            if (maxCharge <= 0)
+            {
+                chargeReady = false;
+                StartCoroutine(RechargeCO());
+            }
         }
+        else if (!hasReachedGround)
+        {
+            transform.position = new Vector3(transform.position.x + speed * Input.GetAxis("Horizontal") * Time.deltaTime, transform.position.y - verticalSpeed * Time.deltaTime, transform.position.z);
+        }
+        else
+            transform.position = new Vector3(transform.position.x + speed * Input.GetAxis("Horizontal") * Time.deltaTime, transform.position.y, transform.position.z);
+    }
 
-        else if (Input.GetKey(KeyCode.W) && !hasReachedTop)
+    IEnumerator RechargeCO()
+    {
+        while (maxCharge < 4)
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y + speed, transform.position.z);
+            maxCharge += Time.fixedDeltaTime;
+            yield return null;
         }
-
-        else if (Input.GetKey(KeyCode.S) && !hasReachedGround)
-        {
-            transform.position = new Vector3(transform.position.x, transform.position.y - speed, transform.position.z);
-        }
+        maxCharge = 4f;
+        chargeReady = true;
+        yield return null;
     }
 
     private void CheckGround()
