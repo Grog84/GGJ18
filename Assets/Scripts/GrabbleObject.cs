@@ -5,9 +5,9 @@ using UnityEngine;
 public class GrabbleObject : MonoBehaviour
 {
     public GameObject handObject = null;
-    public Vector3 grabOffset;
-    bool isHandContact = false;
-    public bool isGrabbed = false;
+    [HideInInspector] public Vector3 grabOffset;
+    [HideInInspector] bool isHandContact = false;
+    [HideInInspector] public bool isGrabbed = false;
         
 
     void Update()
