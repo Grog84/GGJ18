@@ -8,7 +8,6 @@ public class DocCollisionDetection : MonoBehaviour {
 
     public void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log(other.gameObject.layer.ToString());
         if (other.gameObject.layer == 8)
         {
             alienRay.hasReachedGround = true;
