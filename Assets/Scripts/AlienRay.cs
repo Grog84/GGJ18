@@ -4,39 +4,60 @@ using UnityEngine;
 
 public class AlienRay : MonoBehaviour
 {
-    public Rigidbody2D body;
-    public Transform alienRay;
+    public float speed;
+    public Transform player;
 
+    public Vector3 offset;
+    public LayerMask layerMask;
+
+    public bool hasReachedGround;
+    public bool hasReachedTop;
+
+    private void Start()
+    {
+        offset = transform.position - player.position;
+    }
 
     void Update()
     {
+        Move();
+        UpdatePlayerPosition();
+        CheckGround();
+    }
+
+    private void Move()
+    {
         if (Input.GetKey(KeyCode.D))
         {
-            body.AddForce(Vector3.right * 1, ForceMode2D.Impulse);
+            transform.position = new Vector3(transform.position.x + speed, transform.position.y, transform.position.z);
         }
 
-        if (Input.GetKey(KeyCode.A))
+        else if (Input.GetKey(KeyCode.A))
         {
-            body.AddForce(Vector3.left * 1, ForceMode2D.Impulse);
+            transform.position = new Vector3(transform.position.x - speed, transform.position.y, transform.position.z);
         }
 
-        if (Input.GetKey(KeyCode.W))
+        else if (Input.GetKey(KeyCode.W) && !hasReachedTop)
         {
-            body.velocity = Vector3.up * 1;
-                //body.AddForce(Vector3.up * 10000, ForceMode2D. Impulse);
+            transform.position = new Vector3(transform.position.x, transform.position.y + speed, transform.position.z);
         }
 
-        if (Input.GetKey(KeyCode.S))
+        else if (Input.GetKey(KeyCode.S) && !hasReachedGround)
         {
-            body.velocity = Vector3.down * 1;
-            //body.AddForce(Vector3.up * 10000, ForceMode2D. Impulse);
+            transform.position = new Vector3(transform.position.x, transform.position.y - speed, transform.position.z);
         }
     }
 
-    private void LateUpdate()
+    private void CheckGround()
     {
-        Vector3 pos = alienRay.position;
-        pos.x = body.position.x;
-        alienRay.position = pos;
+        Vector2 position = new Vector2(transform.position.x, transform.position.y);
+        
+        hasReachedGround = Physics2D.Raycast(position, Vector2.down, 0.9f, layerMask);
+        hasReachedTop = Physics2D.Raycast(position, Vector2.up, 0.9f, layerMask);
+    }
+
+    void UpdatePlayerPosition()
+    {
+        player.position = transform.position + offset;
     }
 }

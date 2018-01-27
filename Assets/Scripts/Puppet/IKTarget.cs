@@ -1,65 +1,39 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class IKTarget : MonoBehaviour {
 
-    public bool isActive;
-
-    public Transform referencePoint;
-    public float maxDistanceSq;
-    public float moveSpeed;
-
-    Vector3 targetPos;
+    public GrabRadar radar;
+    public GrabSystem m_grabSystem;
+    Vector3 startingPosition;
 
     private void Start()
     {
-        maxDistanceSq = Vector3.SqrMagnitude(referencePoint.position - transform.position);
+        startingPosition = transform.localPosition;
     }
 
     // Update is called once per frame
     void Update() {
 
-        if (isActive)
+        if (radar.nearestGrabbleObject != null)
         {
-            Move();
+            transform.DOMove(radar.nearestGrabbleObject.transform.position, 0.5f);
+        }
+
+        //else if (m_grabSystem.isGrabbing == false)
+        //{
+
+        //}
+
+        else
+        {
+            transform.DOLocalMove(startingPosition, 0.5f);
+            //transform.localPosition = startingPosition;
         }
 
 	}
 
-    private void Move()
-    {
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            var curpos = transform.position;
-            targetPos = new Vector3(curpos.x - moveSpeed, curpos.y, curpos.z);
-            if(Vector3.SqrMagnitude(targetPos - referencePoint.transform.position) < maxDistanceSq)
-                transform.position = targetPos;
-        }
-
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            var curpos = transform.position;
-            targetPos = new Vector3(curpos.x + moveSpeed, curpos.y, curpos.z);
-            if (Vector3.SqrMagnitude(targetPos - referencePoint.transform.position) < maxDistanceSq)
-                transform.position = targetPos;
-        }
-
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            var curpos = transform.position;
-            targetPos = new Vector3(curpos.x, curpos.y + moveSpeed, curpos.z);
-            if (Vector3.SqrMagnitude(targetPos - referencePoint.transform.position) < maxDistanceSq)
-                transform.position = targetPos;
-        }
-
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            var curpos = transform.position;
-            targetPos = new Vector3(curpos.x, curpos.y - moveSpeed, curpos.z);
-            if (Vector3.SqrMagnitude(targetPos - referencePoint.transform.position) < maxDistanceSq)
-                transform.position = targetPos;
-        }
-
-    }
+    
 }

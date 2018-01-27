@@ -7,7 +7,7 @@ public class GrabbleObject : MonoBehaviour
     public GameObject handObject = null;
     public Vector3 grabOffset;
     bool isHandContact = false;
-    /*[HideInInspector]*/ public bool isGrabbed = false;
+    public bool isGrabbed = false;
         
 
     void Update()
