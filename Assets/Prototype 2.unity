@@ -828,6 +828,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1786501230}
   - component: {fileID: 1786501231}
+  - component: {fileID: 1786501232}
   m_Layer: 0
   m_Name: Puppet (1)
   m_TagString: Untagged
@@ -865,8 +866,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d379a160793bfc84597b49790f2f975d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heelR: {fileID: 1629499662}
-  heelL: {fileID: 644356476}
+--- !u!114 &1786501232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1786501229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d82dde8c645b8ca4ebd8f3cc5d0654f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heelR: {fileID: 0}
+  heelL: {fileID: 0}
   body: {fileID: 2014835465}
   alien: {fileID: 209291351}
 --- !u!1 &2014835464
