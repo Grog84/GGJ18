@@ -1,6 +1,10 @@
 fileFormatVersion: 2
 guid: 18e0782656ff7de4bbddf55073193261
+<<<<<<< Updated upstream
 timeCreated: 1517079755
+=======
+timeCreated: 1517081274
+>>>>>>> Stashed changes
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -220,10 +224,6 @@ TextureImporter:
         - {x: -64, y: -64}
         - {x: 64, y: -64}
         - {x: 64, y: 64}
-      - - {x: 50, y: 20}
-        - {x: 56, y: 20}
-        - {x: 56, y: 1}
-        - {x: 50, y: 1}
       tessellationDetail: 0
     - serializedVersion: 2
       name: pdf tileset (2)_6
