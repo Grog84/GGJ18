@@ -9,9 +9,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: floor_test1
+  m_Name: pdf tileset (2)_22
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: ba8ed8081eae4514699c3f2f39d0b19a, type: 3}
+  m_Sprite: {fileID: 21300044, guid: 18e0782656ff7de4bbddf55073193261, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
