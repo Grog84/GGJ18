@@ -33,7 +33,13 @@ public class GrabSystem : MonoBehaviour
         if (isGrabbing)
         {
             if (m_Radar.nearestGrabbleObject)
-                m_Radar.nearestGrabbleObject.transform.position = nearHandTransform.position + grabbedObjOffset;
+            {
+                Rigidbody2D goRB = m_Radar.nearestGrabbleObject.GetComponent<Rigidbody2D>();
+                var direction = goRB.transform.position - transform.position;
+                goRB.AddForce(direction*10f);
+
+                //m_Radar.nearestGrabbleObject.transform.position = nearHandTransform.position + grabbedObjOffset;
+            }
             else
                 m_Radar.nearestGrabbleObject = null;
         }

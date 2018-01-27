@@ -14,10 +14,12 @@ public class AlienRay : MonoBehaviour
     public bool hasReachedGround;
     public bool hasReachedTop;
 
+    public bool hasCollided;
+
     public bool chargeReady = true;
     public float maxCharge = 4f;
 
-    public float feetRaycastLength = 4.5f;
+    public float feetRaycastLength = 0.5f;
     public float headtRaycastLength = 0.5f;
 
     private void Start()
@@ -38,6 +40,8 @@ public class AlienRay : MonoBehaviour
         if (Input.GetAxis("Jump") > 0 && chargeReady)
         {
             transform.position = new Vector3(transform.position.x + speed * Input.GetAxis("Horizontal") * Time.deltaTime, transform.position.y + verticalSpeed * Time.deltaTime, transform.position.z);
+
+
             maxCharge -= Time.deltaTime;
             if (maxCharge <= 0)
             {
@@ -79,4 +83,5 @@ public class AlienRay : MonoBehaviour
     {
         player.position = transform.position + offset;
     }
+
 }
