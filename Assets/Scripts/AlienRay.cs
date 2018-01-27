@@ -4,39 +4,75 @@ using UnityEngine;
 
 public class AlienRay : MonoBehaviour
 {
-    public Rigidbody2D body;
-    public Transform alienRay;
+    public float speed;
+    public float verticalSpeed;
+    public Transform player;
 
+    public Vector3 offset;
+    public LayerMask layerMask;
+
+    public bool hasReachedGround;
+    public bool hasReachedTop;
+
+    public bool chargeReady = true;
+    public float maxCharge = 4f;
+
+
+    private void Start()
+    {
+        offset = transform.position - player.position;
+    }
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.D))
-        {
-            body.AddForce(Vector3.right * 1, ForceMode2D.Impulse);
-        }
-
-        if (Input.GetKey(KeyCode.A))
-        {
-            body.AddForce(Vector3.left * 1, ForceMode2D.Impulse);
-        }
-
-        if (Input.GetKey(KeyCode.W))
-        {
-            body.velocity = Vector3.up * 1;
-                //body.AddForce(Vector3.up * 10000, ForceMode2D. Impulse);
-        }
-
-        if (Input.GetKey(KeyCode.S))
-        {
-            body.velocity = Vector3.down * 1;
-            //body.AddForce(Vector3.up * 10000, ForceMode2D. Impulse);
-        }
+        Move();
+        UpdatePlayerPosition();
+        CheckGround();
     }
 
-    private void LateUpdate()
+    private void Move()
     {
-        Vector3 pos = alienRay.position;
-        pos.x = body.position.x;
-        alienRay.position = pos;
+
+        if (Input.GetAxis("Jump") > 0 && chargeReady)
+        {
+            transform.position = new Vector3(transform.position.x + speed * Input.GetAxis("Horizontal") * Time.deltaTime, transform.position.y + verticalSpeed * Time.deltaTime, transform.position.z);
+            maxCharge -= Time.deltaTime;
+            if (maxCharge <= 0)
+            {
+                chargeReady = false;
+                StartCoroutine(RechargeCO());
+            }
+        }
+        else if (!hasReachedGround)
+        {
+            transform.position = new Vector3(transform.position.x + speed * Input.GetAxis("Horizontal") * Time.deltaTime, transform.position.y - verticalSpeed * Time.deltaTime, transform.position.z);
+        }
+        else
+            transform.position = new Vector3(transform.position.x + speed * Input.GetAxis("Horizontal") * Time.deltaTime, transform.position.y, transform.position.z);
+    }
+
+    IEnumerator RechargeCO()
+    {
+        while (maxCharge < 4)
+        {
+            maxCharge += Time.fixedDeltaTime;
+            yield return null;
+        }
+        maxCharge = 4f;
+        chargeReady = true;
+        yield return null;
+    }
+
+    private void CheckGround()
+    {
+        Vector2 position = new Vector2(transform.position.x, transform.position.y);
+        
+        hasReachedGround = Physics2D.Raycast(position, Vector2.down, 0.9f, layerMask);
+        hasReachedTop = Physics2D.Raycast(position, Vector2.up, 0.9f, layerMask);
+    }
+
+    void UpdatePlayerPosition()
+    {
+        player.position = transform.position + offset;
     }
 }

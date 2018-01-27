@@ -4,60 +4,50 @@ using UnityEngine;
 
 public class GrabSystem : MonoBehaviour
 {
-    public GameObject grabObject = null;
-    public Vector3 grabOffset;
-    public bool isObjectInRange = false;
-    public bool onGrabbing = false;
-    public Vector3 startingPosition;
+    public GrabRadar m_Radar;
 
+    public bool isObjectAtReach = false;
+    public bool isGrabbing;
 
-    void Start()
+    public GameObject grabbedObj = null;
+    Vector3 grabbedObjOffset;
+    Transform nearHandTransform;
+
+    public void SetAtReach(GameObject reachableObject, Transform handTransform)
     {
-        startingPosition = transform.position;
+ 
+            nearHandTransform = handTransform;
+            isObjectAtReach = true;
+        
     }
 
-    void Update()
+    private void Update()
     {
-        if (isObjectInRange)
+        if (isObjectAtReach && Input.GetKey(KeyCode.C) && !isGrabbing)
         {
-            if (Input.GetKey(KeyCode.C))
-            {
-                onGrabbing = true;
-            }
+            isGrabbing = true;
+            GrabObj(m_Radar.nearestGrabbleObject);
+            return;
+        }
+
+        if (isGrabbing)
+        {
+            if (m_Radar.nearestGrabbleObject)
+                m_Radar.nearestGrabbleObject.transform.position = nearHandTransform.position + grabbedObjOffset;
             else
-            {
-                GrabbleObject grabble = grabObject.GetComponent<GrabbleObject>();
-                grabble.isGrabbed = false;
-                grabble.handObject = null;
-                onGrabbing = false;
-            }
+                m_Radar.nearestGrabbleObject = null;
+        }
+
+        if (Input.GetKey(KeyCode.C) && isGrabbing)
+        {
+            isGrabbing = false;
+            return;
         }
     }
 
-    /*void OnTriggerStay2D(Collider2D collision)
+    void GrabObj(GameObject obj)
     {
-        if (collision.gameObject.tag == "GrabbleObject")
-        {
-            if (!onGrabbing)
-            {
-                isObjectInRange = true;
-                grabObject = collision.gameObject;
-                grabOffset = grabObject.transform.position - transform.position;
-
-                GrabbleObject grabble = grabObject.GetComponent<GrabbleObject>();
-                grabble.handObject = gameObject;
-                grabble.isGrabbed = true;
-                grabble.grabOffset = grabOffset;
-            }
-        }
+        grabbedObjOffset = obj.transform.position - nearHandTransform.position;
     }
 
-    void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "GrabbleObject")
-        {
-            isObjectInRange = false;
-            grabObject = null;
-        }
-    }*/
 }

@@ -56,8 +56,6 @@ public class FloorTiles : Tile {
             }
         }
 
-        Debug.Log(composition);
-
         if (composition[1] == 'E' && composition[3] == 'E' && composition[5] == 'E' && composition[7] == 'E')
         {
             tileData.sprite = floorSprite[16];

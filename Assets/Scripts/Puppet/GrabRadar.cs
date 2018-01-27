@@ -5,23 +5,7 @@ using UnityEngine;
 public class GrabRadar : MonoBehaviour
 {
     public List<GameObject> nearGrabbleObjects = new List<GameObject>();
-    GameObject nearestGrabbleObject = null;
-    public GrabSystem handLeft;
-    public GrabSystem handRight;
-
-    
-    void Update()
-    {
-        if (nearGrabbleObjects.Count > 0 && (!handLeft.isObjectInRange && !handRight.isObjectInRange))
-        {
-            if (nearestGrabbleObject != null)
-            {
-                handLeft.transform.position = nearestGrabbleObject.transform.position;
-                handRight.transform.position = nearestGrabbleObject.transform.position;
-            }
-        }
-    }
-
+    public GameObject nearestGrabbleObject = null;
 
     void GetNearestObject()
     {
