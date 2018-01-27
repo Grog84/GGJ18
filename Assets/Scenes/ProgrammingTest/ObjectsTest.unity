@@ -194,26 +194,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114041500161200772, guid: 5340e95d9218c7c47991ddf4f1850d23,
+        type: 2}
+      propertyPath: objectToActive
+      value: 
+      objectReference: {fileID: 1144387235}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5340e95d9218c7c47991ddf4f1850d23, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &947524986 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1539394195289830, guid: 5340e95d9218c7c47991ddf4f1850d23,
-    type: 2}
-  m_PrefabInternal: {fileID: 346851716}
---- !u!114 &947524987
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 947524986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 565fdb518aa5c4347968bc5a9ea8c189, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToActive: {fileID: 1144387235}
 --- !u!1 &1144387235 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1253881561945190, guid: f3474d5c902103f4980708b3d985fb8a,
@@ -299,15 +287,6 @@ Prefab:
     - target: {fileID: 4394085017054620, guid: edba86fef48f73448905e1d58f08d52a, type: 2}
       propertyPath: m_RootOrder
       value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960139231708582, guid: edba86fef48f73448905e1d58f08d52a, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 3.19
-      objectReference: {fileID: 0}
-    - target: {fileID: 114198464060007616, guid: edba86fef48f73448905e1d58f08d52a,
-        type: 2}
-      propertyPath: speed
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: edba86fef48f73448905e1d58f08d52a, type: 2}
@@ -562,13 +541,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 114677588898931188, guid: f3474d5c902103f4980708b3d985fb8a,
-        type: 2}
-      propertyPath: pointY
-      value: 0.5
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114364802197724190, guid: f3474d5c902103f4980708b3d985fb8a, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f3474d5c902103f4980708b3d985fb8a, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &2003244635
