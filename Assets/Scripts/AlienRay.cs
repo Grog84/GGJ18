@@ -4,43 +4,39 @@ using UnityEngine;
 
 public class AlienRay : MonoBehaviour
 {
-    public HingeJoint2D heelR;
-    public HingeJoint2D heelL;
-    Rigidbody2D rbHellR;
-    Rigidbody2D rbHellL;
     public Rigidbody2D body;
-    public Transform alien;
+    public Transform alienRay;
 
 
-    void Start()
-    {
-        rbHellR = heelR.GetComponent<Rigidbody2D>();
-        rbHellL = heelL.GetComponent<Rigidbody2D>();
-    }
-
-
-    private void Update()
+    void Update()
     {
         if (Input.GetKey(KeyCode.D))
         {
-            body.AddForce(Vector3.right * 100);
+            body.AddForce(Vector3.right * 1, ForceMode2D.Impulse);
         }
 
         if (Input.GetKey(KeyCode.A))
         {
-            body.AddForce(Vector3.left * 100);
+            body.AddForce(Vector3.left * 1, ForceMode2D.Impulse);
         }
 
         if (Input.GetKey(KeyCode.W))
         {
-            body.AddForce(Vector3.up * 100);
+            body.velocity = Vector3.up * 1;
+                //body.AddForce(Vector3.up * 10000, ForceMode2D. Impulse);
+        }
+
+        if (Input.GetKey(KeyCode.S))
+        {
+            body.velocity = Vector3.down * 1;
+            //body.AddForce(Vector3.up * 10000, ForceMode2D. Impulse);
         }
     }
 
     private void LateUpdate()
     {
-        Vector3 pos = alien.position;
+        Vector3 pos = alienRay.position;
         pos.x = body.position.x;
-        alien.position = pos;
+        alienRay.position = pos;
     }
 }
