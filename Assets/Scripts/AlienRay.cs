@@ -17,6 +17,8 @@ public class AlienRay : MonoBehaviour
     public bool chargeReady = true;
     public float maxCharge = 4f;
 
+    public float feetRaycastLength = 4.5f;
+    public float headtRaycastLength = 0.5f;
 
     private void Start()
     {
@@ -66,9 +68,11 @@ public class AlienRay : MonoBehaviour
     private void CheckGround()
     {
         Vector2 position = new Vector2(transform.position.x, transform.position.y);
+
+        Debug.DrawLine(position, position + Vector2.down * feetRaycastLength, Color.red);
+        hasReachedGround = Physics2D.Raycast(position, Vector2.down, feetRaycastLength, layerMask);
         
-        hasReachedGround = Physics2D.Raycast(position, Vector2.down, 0.9f, layerMask);
-        hasReachedTop = Physics2D.Raycast(position, Vector2.up, 0.9f, layerMask);
+        hasReachedTop = Physics2D.Raycast(position, Vector2.up, headtRaycastLength, layerMask);
     }
 
     void UpdatePlayerPosition()
