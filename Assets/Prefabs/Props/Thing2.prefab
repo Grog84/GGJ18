@@ -23,9 +23,10 @@ GameObject:
   - component: {fileID: 61879349590241044}
   - component: {fileID: 61275623393322760}
   - component: {fileID: 50105705623149432}
+  - component: {fileID: 114464787060980394}
   m_Layer: 0
   m_Name: Thing2
-  m_TagString: Untagged
+  m_TagString: GrabbleObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,6 +114,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.68, y: 0.58}
   m_EdgeRadius: 0
+--- !u!114 &114464787060980394
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1438749283653720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f61752e0350573c47a8aaabba6d11574, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handObject: {fileID: 0}
+  grabOffset: {x: 0, y: 0, z: 0}
+  isGrabbed: 0
 --- !u!212 &212267990680436612
 SpriteRenderer:
   m_ObjectHideFlags: 1
