@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 18e0782656ff7de4bbddf55073193261
-timeCreated: 1517074837
+timeCreated: 1517076265
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -114,10 +114,14 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -64, y: 64}
+        - {x: -64, y: -64}
+        - {x: 64, y: -64}
+        - {x: 64, y: 64}
       tessellationDetail: 0
     - serializedVersion: 2
       name: pdf tileset (2)_1
@@ -128,10 +132,14 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -64, y: 64}
+        - {x: -64, y: -64}
+        - {x: 64, y: -64}
+        - {x: 64, y: 64}
       tessellationDetail: 0
     - serializedVersion: 2
       name: pdf tileset (2)_2
@@ -142,10 +150,18 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 64, y: 61}
+        - {x: 55, y: 64}
+        - {x: -64, y: 64}
+        - {x: -64, y: -64}
+        - {x: 41, y: -64}
+        - {x: 54, y: -46}
+        - {x: 59, y: -35}
+        - {x: 64, y: 17}
       tessellationDetail: 0
     - serializedVersion: 2
       name: pdf tileset (2)_3
@@ -156,10 +172,14 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -64, y: 64}
+        - {x: -64, y: -64}
+        - {x: 64, y: -64}
+        - {x: 64, y: 64}
       tessellationDetail: 0
     - serializedVersion: 2
       name: pdf tileset (2)_4
@@ -170,10 +190,18 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -64, y: 64}
+        - {x: -64, y: -64}
+        - {x: 64, y: -64}
+        - {x: 64, y: 64}
+      - - {x: 53, y: 17}
+        - {x: 59, y: 17}
+        - {x: 59, y: -2}
+        - {x: 53, y: -2}
       tessellationDetail: 0
     - serializedVersion: 2
       name: pdf tileset (2)_5
@@ -184,10 +212,18 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -64, y: 64}
+        - {x: -64, y: -64}
+        - {x: 64, y: -64}
+        - {x: 64, y: 64}
+      - - {x: 50, y: 20}
+        - {x: 56, y: 20}
+        - {x: 56, y: 1}
+        - {x: 50, y: 1}
       tessellationDetail: 0
     - serializedVersion: 2
       name: pdf tileset (2)_6
@@ -198,10 +234,14 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -64, y: 64}
+        - {x: -64, y: -64}
+        - {x: 64, y: -64}
+        - {x: 64, y: 64}
       tessellationDetail: 0
     - serializedVersion: 2
       name: pdf tileset (2)_7
@@ -212,10 +252,14 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 61, y: -64}
+        - {x: 61, y: 64}
+        - {x: -64, y: 64}
+        - {x: -64, y: -64}
       tessellationDetail: 0
     - serializedVersion: 2
       name: pdf tileset (2)_8
@@ -226,10 +270,16 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -53, y: 64}
+        - {x: -64, y: 36}
+        - {x: -64, y: -25}
+        - {x: -58, y: -64}
+        - {x: 64, y: -64}
+        - {x: 64, y: 64}
       tessellationDetail: 0
     - serializedVersion: 2
       name: pdf tileset (2)_9
@@ -240,10 +290,17 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -59, y: 64}
+        - {x: -64, y: 38}
+        - {x: -64, y: -38}
+        - {x: -56, y: -64}
+        - {x: 63, y: -64}
+        - {x: 64, y: -52}
+        - {x: 64, y: 64}
       tessellationDetail: 0
     - serializedVersion: 2
       name: pdf tileset (2)_10
@@ -254,10 +311,16 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -64, y: 64}
+        - {x: -64, y: 11}
+        - {x: -44, y: -64}
+        - {x: 63, y: -64}
+        - {x: 64, y: -59}
+        - {x: 64, y: 64}
       tessellationDetail: 0
     - serializedVersion: 2
       name: pdf tileset (2)_11
@@ -268,10 +331,16 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -64, y: 64}
+        - {x: -64, y: -57}
+        - {x: -57, y: -64}
+        - {x: 63, y: -64}
+        - {x: 64, y: -57}
+        - {x: 64, y: 64}
       tessellationDetail: 0
     - serializedVersion: 2
       name: pdf tileset (2)_12
@@ -282,10 +351,17 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 48.303406, y: 58.44055}
+        - {x: -55.37433, y: 57.04773}
+        - {x: -64, y: 64}
+        - {x: -64, y: -4.6795044}
+        - {x: 60.070496, y: -3.772644}
+        - {x: 58.86139, y: 56.604553}
+        - {x: 54.86133, y: 64}
       tessellationDetail: 0
     - serializedVersion: 2
       name: pdf tileset (2)_13
@@ -296,10 +372,16 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -64, y: 44.28424}
+        - {x: -64, y: -29.539001}
+        - {x: 61, y: -30}
+        - {x: 61, y: 64}
+        - {x: 47.88672, y: 56.650146}
+        - {x: -44.25482, y: 55.764343}
       tessellationDetail: 0
     - serializedVersion: 2
       name: pdf tileset (2)_14
@@ -310,7 +392,7 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -324,7 +406,7 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -338,7 +420,7 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -352,10 +434,16 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 40.439346, y: 55.803284}
+        - {x: -52.134533, y: 56.091736}
+        - {x: -64, y: 64}
+        - {x: -64, y: -30}
+        - {x: 64, y: -28.681946}
+        - {x: 64, y: 39.803284}
       tessellationDetail: 0
     - serializedVersion: 2
       name: pdf tileset (2)_18
@@ -366,10 +454,16 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 53.201645, y: 56.40631}
+        - {x: -52.33278, y: 56.531128}
+        - {x: -64, y: 64}
+        - {x: -64, y: -29}
+        - {x: 64, y: -29}
+        - {x: 64, y: 64}
       tessellationDetail: 0
     - serializedVersion: 2
       name: pdf tileset (2)_19
@@ -380,10 +474,17 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -52.403625, y: 55.652344}
+        - {x: -64, y: 64}
+        - {x: -64, y: -29}
+        - {x: -31.576965, y: -29.472046}
+        - {x: 64, y: -28.682007}
+        - {x: 64, y: 41.242615}
+        - {x: 40.501556, y: 56.560608}
       tessellationDetail: 0
     - serializedVersion: 2
       name: pdf tileset (2)_20
@@ -394,10 +495,16 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 64, y: 64}
+        - {x: 53.12799, y: 56.541565}
+        - {x: -53.211487, y: 55.652405}
+        - {x: -64, y: 64}
+        - {x: -64, y: -29}
+        - {x: 64, y: -30}
       tessellationDetail: 0
     - serializedVersion: 2
       name: pdf tileset (2)_21
@@ -408,10 +515,16 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 53.186462, y: 56.46521}
+        - {x: -52.884705, y: 56.091736}
+        - {x: -64, y: 64}
+        - {x: -64, y: -28.803284}
+        - {x: 64, y: -28.89502}
+        - {x: 64, y: 64}
       tessellationDetail: 0
     - serializedVersion: 2
       name: pdf tileset (2)_22
@@ -422,10 +535,16 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 53.190063, y: 58.12787}
+        - {x: -50.75525, y: 57.84912}
+        - {x: -64, y: 64}
+        - {x: -64, y: -5.2426147}
+        - {x: 64, y: -4.531128}
+        - {x: 64, y: 64}
       tessellationDetail: 0
     - serializedVersion: 2
       name: pdf tileset (2)_23
@@ -436,10 +555,16 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 53.082336, y: 54.738586}
+        - {x: -54.52948, y: 54.33435}
+        - {x: -64, y: 64}
+        - {x: -64, y: -31}
+        - {x: 64, y: -31}
+        - {x: 64, y: 64}
       tessellationDetail: 0
     - serializedVersion: 2
       name: pdf tileset (2)_24
@@ -450,10 +575,16 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -64, y: 38.803284}
+        - {x: -64, y: -31}
+        - {x: 64, y: -31}
+        - {x: 64, y: 64}
+        - {x: 52.200134, y: 54.209534}
+        - {x: -40.167175, y: 54.33435}
       tessellationDetail: 0
     - serializedVersion: 2
       name: pdf tileset (2)_25
@@ -464,7 +595,7 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
