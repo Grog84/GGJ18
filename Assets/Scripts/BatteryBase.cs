@@ -5,12 +5,13 @@ using UnityEngine;
 public class BatteryBase : MonoBehaviour
 {
     public GameObject objectToActive = null;
-
+    public AudioSource[] powerAudio;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "GrabbleObjectBattery")
         {
+            powerAudio[0].Play();
             if (objectToActive != null)
             {
                 if (objectToActive.GetComponent<DoorScript>() != null)
@@ -29,6 +30,7 @@ public class BatteryBase : MonoBehaviour
     {
         if (collision.gameObject.tag == "GrabbleObjectBattery")
         {
+            powerAudio[1].Play();
             if (objectToActive != null)
             {
                 if (objectToActive.GetComponent<DoorScript>() != null)

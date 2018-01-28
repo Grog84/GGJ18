@@ -11,6 +11,9 @@ public class MenuManager : MonoBehaviour {
     public GameObject menuFinished;
     public Animator menuAnimator;
     public AudioSource menusource;
+    public AudioSource buttonsource;
+    public AudioSource cricetsource;
+
 
     private void Awake()
     {
@@ -21,7 +24,7 @@ public class MenuManager : MonoBehaviour {
     void Start() {
 
         fadeEffect.DOFade(0f, 3f);
-        menusource.DOFade(1f, 2f);
+        menusource.DOFade(0.35f, 6f);
         StartCoroutine(StartAnimationCO());
     }
 
@@ -33,6 +36,7 @@ public class MenuManager : MonoBehaviour {
 
     public void StartFinalAnimation()
     {
+        buttonsource.PlayOneShot(buttonsource.clip);
         menuAnimator.SetBool("finish", true);
 
         menuFinished.transform.position = new Vector3(menuFinished.transform.position.x, menuFinished.transform.position.y, -1.5f);
@@ -41,7 +45,9 @@ public class MenuManager : MonoBehaviour {
 
     IEnumerator WaitFinish()
     {
-        yield return new WaitForSecondsRealtime(5f);
+        yield return new WaitForSecondsRealtime(0.7f);
+        cricetsource.PlayOneShot(cricetsource.clip);
+        yield return new WaitForSecondsRealtime(3f);
         FadeOut();
     }
 

@@ -11,6 +11,8 @@ public class Door2PiecesScript : TriggerEffect
     GameObject pieceUP;
     GameObject pieceDOWN;
 
+    public AudioSource doorSound;
+    bool lastSoundState;
 
     void Start()
     {    
@@ -18,10 +20,13 @@ public class Door2PiecesScript : TriggerEffect
         pieceDOWN = transform.GetChild(1).gameObject;
         startPosUP = pieceUP.transform.position;
         startPosDOWN = pieceDOWN.transform.position;
+        lastSoundState = isActive;
     }
 
     void Update()
     {
+
+
         Vector3 posPieceUP = pieceUP.transform.position;
         Vector3 posPieceDOWN = pieceDOWN.transform.position;
 
@@ -52,5 +57,11 @@ public class Door2PiecesScript : TriggerEffect
 
         pieceUP.transform.position = posPieceUP;
         pieceDOWN.transform.position = posPieceDOWN;
+
+        if (lastSoundState != isActive)
+        {
+            doorSound.Play();
+            lastSoundState = isActive;
+        }
     }
 }

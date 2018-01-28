@@ -112,6 +112,12 @@ public class GrabSystem : MonoBehaviour
             //obj.GetComponent<GrabbleObject>().isGrabbed = true;
             obj.GetComponent<GrabbleObject>().StartFollowing(grabbedObjOffset, nearHandTransform);
             DisableColliders();
+
+            if (obj.GetComponent<ZombieAudio>() != null)
+            {
+                obj.GetComponent<ZombieAudio>().OnGrab();
+            }
+
             // obj.transform.parent = nearHandTransform;
 
         }
