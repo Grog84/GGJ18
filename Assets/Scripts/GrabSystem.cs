@@ -13,6 +13,8 @@ public class GrabSystem : MonoBehaviour
     Vector3 grabbedObjOffset;
     Transform nearHandTransform;
 
+    public BoxCollider2D[] switchCollider;
+
     public void SetAtReach(GameObject reachableObject, Transform handTransform)
     {
  
@@ -23,7 +25,7 @@ public class GrabSystem : MonoBehaviour
 
     public void SetNomoreAtReach()
     {
-        isObjectAtReach = false;
+        //isObjectAtReach = false;
     }
 
     private void Update()
@@ -56,6 +58,7 @@ public class GrabSystem : MonoBehaviour
             grabbedObj.GetComponent<GrabbleObject>().StopFollowing();
             //grabbedObj.transform.parent = null;
             grabbedObj = null;
+            StartCoroutine(ReEnableColliders());
             return;
         }
     }
@@ -68,10 +71,36 @@ public class GrabSystem : MonoBehaviour
             grabbedObjOffset = obj.transform.position - nearHandTransform.position;
             //obj.GetComponent<GrabbleObject>().isGrabbed = true;
             obj.GetComponent<GrabbleObject>().StartFollowing(grabbedObjOffset, nearHandTransform);
-
+            DisableColliders();
             // obj.transform.parent = nearHandTransform;
 
         }
+    }
+
+    void EnableColliders()
+    {
+        foreach (var coll in switchCollider)
+        {
+            coll.isTrigger = false;
+        }
+
+    }
+
+    void DisableColliders()
+    {
+        foreach (var coll in switchCollider)
+        {
+            coll.isTrigger = true;
+        }
+
+    }
+
+    IEnumerator ReEnableColliders()
+    {
+        yield return new WaitForSeconds(1f);
+        EnableColliders();
+        yield return null;
+
     }
 
 }

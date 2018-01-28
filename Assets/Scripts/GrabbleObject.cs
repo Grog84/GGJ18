@@ -20,7 +20,8 @@ public class GrabbleObject : MonoBehaviour
         isGrabbed = true;
         grabOffset = offset;
         hand = handTrans;
-        rb.freezeRotation = true;
+        rb.isKinematic = true;
+        //rb.freezeRotation = true;
     }
 
     public void StopFollowing()
@@ -28,14 +29,18 @@ public class GrabbleObject : MonoBehaviour
         isGrabbed = false;
         grabOffset = Vector3.zero;
         hand = null;
-        rb.freezeRotation = false;
+        rb.isKinematic = false;
+        //rb.freezeRotation = false;
     }
 
-    void Update()
+    void LateUpdate()
     {
         if (isGrabbed)
         {
-            transform.position = hand.transform.position + grabOffset;
+            //Debug.Log(hand.transform.position + grabOffset);
+            //transform.position = hand.transform.position + grabOffset;
+            transform.position = hand.transform.position;
         }
+
     }
 }

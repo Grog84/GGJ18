@@ -962,6 +962,7 @@ MonoBehaviour:
   isObjectAtReach: 0
   isGrabbing: 0
   grabbedObj: {fileID: 0}
+  switchCollider: []
 --- !u!114 &114068821251313624
 MonoBehaviour:
   m_ObjectHideFlags: 1
