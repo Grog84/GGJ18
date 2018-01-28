@@ -26,12 +26,12 @@ public class MenuManager : MonoBehaviour {
     IEnumerator StartAnimationCO()
     {
         yield return new WaitForSecondsRealtime(5f);
-        StartFinalAnimation();
+        menuAnimator.speed = 1;
     }
 
     public void StartFinalAnimation()
     {
-        //menuAnimator.SetBool("finish", true);
+        menuAnimator.SetBool("finish", true);
 
         menuFinished.transform.position = new Vector3(menuFinished.transform.position.x, menuFinished.transform.position.y, -1.5f);
         StartCoroutine(WaitFinish());
