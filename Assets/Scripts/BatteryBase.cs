@@ -13,7 +13,14 @@ public class BatteryBase : MonoBehaviour
         {
             if (objectToActive != null)
             {
-                objectToActive.GetComponent<DoorScript>().isActive = true;
+                if (objectToActive.GetComponent<DoorScript>() != null)
+                {
+                    objectToActive.GetComponent<DoorScript>().isActive = true;
+                }
+                else if (objectToActive.GetComponent<Door2PiecesScript>() != null)
+                {
+                    objectToActive.GetComponent<Door2PiecesScript>().isActive = true;
+                }
             }
         }
     }
@@ -24,7 +31,14 @@ public class BatteryBase : MonoBehaviour
         {
             if (objectToActive != null)
             {
-                objectToActive.GetComponent<DoorScript>().isActive = false;
+                if (objectToActive.GetComponent<DoorScript>() != null)
+                {
+                    objectToActive.GetComponent<DoorScript>().isActive = false;
+                }
+                else if (objectToActive.GetComponent<Door2PiecesScript>() != null)
+                {
+                    objectToActive.GetComponent<Door2PiecesScript>().isActive = false;
+                }
             }
         }
     }
