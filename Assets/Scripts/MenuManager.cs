@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour {
 
     public Image fadeEffect;
+    public GameObject menuFinished;
     public Animator menuAnimator;
 
     private void Awake()
@@ -30,7 +31,16 @@ public class MenuManager : MonoBehaviour {
 
     public void StartFinalAnimation()
     {
-        menuAnimator.speed = 1f;
+        //menuAnimator.SetBool("finish", true);
+
+        menuFinished.transform.position = new Vector3(menuFinished.transform.position.x, menuFinished.transform.position.y, -1.5f);
+        StartCoroutine(WaitFinish());
+    }
+
+    IEnumerator WaitFinish()
+    {
+        yield return new WaitForSecondsRealtime(5f);
+        FadeOut();
     }
 
     public void FadeOut()

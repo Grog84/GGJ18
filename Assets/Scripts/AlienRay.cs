@@ -23,6 +23,7 @@ public class AlienRay : MonoBehaviour
 
     public float feetRaycastLength = 1f;
     public float headtRaycastLength = 1f;
+    public float widthRaycastLength = 1f;
 
     private void Start()
     {
@@ -101,22 +102,22 @@ public class AlienRay : MonoBehaviour
     {
         Vector2 position = new Vector2(transform.position.x, transform.position.y);
 
-        Debug.DrawLine(position, position + Vector2.right * feetRaycastLength, Color.red);
-        Debug.DrawLine(position + Vector2.up * 0.5f, position + Vector2.up * 0.5f + Vector2.right * feetRaycastLength, Color.red);
-        Debug.DrawLine(position + Vector2.down * 0.5f, position + Vector2.down * 0.5f + Vector2.right * feetRaycastLength, Color.red);
+        Debug.DrawLine(position, position + Vector2.right * widthRaycastLength, Color.red);
+        Debug.DrawLine(position + Vector2.up * 0.5f, position + Vector2.up * 0.5f + Vector2.right * widthRaycastLength, Color.red);
+        Debug.DrawLine(position + Vector2.down * 0.5f, position + Vector2.down * 0.5f + Vector2.right * widthRaycastLength, Color.red);
 
-        Debug.DrawLine(position, position + Vector2.left * feetRaycastLength, Color.red);
-        Debug.DrawLine(position + Vector2.up * 0.5f, position + Vector2.up * 0.5f + Vector2.left * feetRaycastLength, Color.red);
-        Debug.DrawLine(position + Vector2.down * 0.5f, position + Vector2.down * 0.5f + Vector2.left * feetRaycastLength, Color.red);
+        Debug.DrawLine(position, position + Vector2.left * widthRaycastLength, Color.red);
+        Debug.DrawLine(position + Vector2.up * 0.5f, position + Vector2.up * 0.5f + Vector2.left * widthRaycastLength, Color.red);
+        Debug.DrawLine(position + Vector2.down * 0.5f, position + Vector2.down * 0.5f + Vector2.left * widthRaycastLength, Color.red);
 
-        hasHitWallR = Physics2D.Raycast(position, Vector2.right, feetRaycastLength, layerMask) ||
-            Physics2D.Raycast(position + Vector2.up * 0.5f, Vector2.right, feetRaycastLength, layerMask) ||
-            Physics2D.Raycast(position + Vector2.down * 0.5f, Vector2.right, feetRaycastLength, layerMask);
+        hasHitWallR = Physics2D.Raycast(position, Vector2.right, widthRaycastLength, layerMask) ||
+            Physics2D.Raycast(position + Vector2.up * 0.5f, Vector2.right, widthRaycastLength, layerMask) ||
+            Physics2D.Raycast(position + Vector2.down * 0.5f, Vector2.right, widthRaycastLength, layerMask);
 
 
-        hasHitWallL = Physics2D.Raycast(position, Vector2.left, feetRaycastLength, layerMask) ||
-            Physics2D.Raycast(position + Vector2.up * 0.5f, Vector2.left, feetRaycastLength, layerMask) ||
-            Physics2D.Raycast(position + Vector2.down * 0.5f, Vector2.left, feetRaycastLength, layerMask);
+        hasHitWallL = Physics2D.Raycast(position, Vector2.left, widthRaycastLength, layerMask) ||
+            Physics2D.Raycast(position + Vector2.up * 0.5f, Vector2.left, widthRaycastLength, layerMask) ||
+            Physics2D.Raycast(position + Vector2.down * 0.5f, Vector2.left, widthRaycastLength, layerMask);
 
     }
 
