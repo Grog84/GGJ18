@@ -52,7 +52,7 @@ public class AlienRay : MonoBehaviour
 
         if (!hasReachedTop)
         {
-            if (Input.GetAxis("Vertical") != 0 /*&& chargeReady*/)
+            if (Input.GetAxis("Vertical") > 0 /*&& chargeReady*/)
             {
                 transform.position = new Vector3(transform.position.x + speed * horInput * Time.deltaTime, transform.position.y + verticalSpeed * Time.deltaTime, transform.position.z);
                 return;

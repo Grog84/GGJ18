@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using Chronos;
+using UnityEngine.SceneManagement;
+
 
 public class CameraController : MonoBehaviour {
 
@@ -16,6 +18,14 @@ public class CameraController : MonoBehaviour {
     private void LateUpdate()
     {
         transform.position = new Vector3(player.position.x , player.position.y, -10f);
+    }
+
+    private void Update()
+    {
+        if (Input.GetAxis("StartButton") > 0)
+        {
+            SceneManager.LoadScene(1);
+        }
     }
 
     //OLD

@@ -774,21 +774,21 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1964127953312890}
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 43614007805062550, guid: b01518ed718cf8c4f86c6f02fea5f7d2, type: 2}
 --- !u!33 &33498235732760080
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1231280707066400}
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 43663670403579318, guid: b38e63a10ad11ff4ba2b75af5b59e11e, type: 2}
 --- !u!33 &33552580136560486
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1271812205450164}
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 43526742481607752, guid: faefcaa505be0794a8a2a68ec31876b8, type: 2}
 --- !u!50 &50222393181456982
 Rigidbody2D:
   serializedVersion: 4
@@ -1678,7 +1678,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 43976339343051042, guid: b1dcde6e20831c34d8b2b0bdd60b1780, type: 2}
   m_Bones:
   - {fileID: 4588585713564002}
   - {fileID: 4286254628918340}
@@ -1726,7 +1726,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 43062878868361756, guid: c70efe4d28ff6264086883d6c7039eb6, type: 2}
   m_Bones:
   - {fileID: 4084865672526912}
   m_BlendShapeWeights: []
@@ -1773,7 +1773,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 43421125635349946, guid: ad603d9e904777b4086a51858fa72bff, type: 2}
   m_Bones:
   - {fileID: 4945300545839700}
   - {fileID: 4660317955304672}

@@ -64,4 +64,12 @@ public class MenuManager : MonoBehaviour {
         SceneManager.LoadScene(1);
     }
 
+    private void Update()
+    {
+        if (Input.GetAxis("Fire1") > 0)
+        {
+            StartFinalAnimation();
+        }
+    }
+
 }
