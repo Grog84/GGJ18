@@ -918,6 +918,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabSystem: {fileID: 114057226675056440}
+  handPosition: {fileID: 0}
 --- !u!114 &114031017829253304
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -947,6 +948,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nearGrabbleObjects: []
   nearestGrabbleObject: {fileID: 0}
+  playerGrabSys: {fileID: 0}
 --- !u!114 &114057226675056440
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1304,6 +1306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabSystem: {fileID: 114057226675056440}
+  handPosition: {fileID: 0}
 --- !u!137 &137553130586582780
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
