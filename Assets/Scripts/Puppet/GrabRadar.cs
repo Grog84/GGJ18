@@ -7,6 +7,8 @@ public class GrabRadar : MonoBehaviour
     public List<GameObject> nearGrabbleObjects = new List<GameObject>();
     public GameObject nearestGrabbleObject = null;
 
+    public GrabSystem playerGrabSys;
+
     void GetNearestObject()
     {
         GameObject nearestObjectTemp = null;
@@ -66,5 +68,10 @@ public class GrabRadar : MonoBehaviour
         }
 
         GetNearestObject();
+
+        if (nearGrabbleObjects.Count == 0)
+        {
+            playerGrabSys.isObjectAtReach = false;
+        }
     }
 }
