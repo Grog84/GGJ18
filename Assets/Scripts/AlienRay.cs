@@ -19,8 +19,8 @@ public class AlienRay : MonoBehaviour
     public bool chargeReady = true;
     public float maxCharge = 4f;
 
-    public float feetRaycastLength = 0.5f;
-    public float headtRaycastLength = 0.5f;
+    public float feetRaycastLength = 1f;
+    public float headtRaycastLength = 1f;
 
     private void Start()
     {
@@ -74,7 +74,12 @@ public class AlienRay : MonoBehaviour
         Vector2 position = new Vector2(transform.position.x, transform.position.y);
 
         Debug.DrawLine(position, position + Vector2.down * feetRaycastLength, Color.red);
-        hasReachedGround = Physics2D.Raycast(position, Vector2.down, feetRaycastLength, layerMask);
+        Debug.DrawLine(position + Vector2.right * 0.5f, position + Vector2.right * 0.5f + Vector2.down * feetRaycastLength, Color.red);
+        Debug.DrawLine(position + Vector2.left * 0.5f, position + Vector2.left * 0.5f + Vector2.down * feetRaycastLength, Color.red);
+
+        hasReachedGround = Physics2D.Raycast(position, Vector2.down, feetRaycastLength, layerMask) || 
+            Physics2D.Raycast(position + Vector2.right * 0.5f, Vector2.down, feetRaycastLength, layerMask) || 
+            Physics2D.Raycast(position + Vector2.left * 0.5f, Vector2.down, feetRaycastLength, layerMask);
         
         hasReachedTop = Physics2D.Raycast(position, Vector2.up, headtRaycastLength, layerMask);
     }
@@ -82,6 +87,11 @@ public class AlienRay : MonoBehaviour
     void UpdatePlayerPosition()
     {
         player.position = transform.position + offset;
+    }
+
+    private void FixedUpdate()
+    {
+        CheckGround();
     }
 
 }

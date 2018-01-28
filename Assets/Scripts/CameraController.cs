@@ -8,14 +8,16 @@ public class CameraController : MonoBehaviour {
 
     public Transform[] fixedPositions;
     int currentAreaIdx = 0;
-    public LocalClock[] localClocks;
+    //public LocalClock[] localClocks;
+    Vector3 nextPosition;
 
     bool isLerping = false;
 
     private void Start()
     {
-        transform.DOMove(fixedPositions[currentAreaIdx].position, 2f);
-        localClocks = FindObjectsOfType<LocalClock>();
+        nextPosition = new Vector3(fixedPositions[currentAreaIdx].position.x, fixedPositions[currentAreaIdx].position.y, -10f);
+        transform.DOMove(nextPosition, 2f);
+        //localClocks = FindObjectsOfType<LocalClock>();
     }
 
     public void MoveToArea(int idx)
@@ -24,29 +26,30 @@ public class CameraController : MonoBehaviour {
         {
             isLerping = true;
             currentAreaIdx = idx;
-            transform.DOMove(fixedPositions[currentAreaIdx].position, 2f);
+            nextPosition = new Vector3(fixedPositions[currentAreaIdx].position.x, fixedPositions[currentAreaIdx].position.y, -10f);
+            transform.DOMove(nextPosition, 2f);
         }
     }
 
-    private void Update()
-    {
-        if (isLerping)
-        {
-            foreach (var clock in localClocks)
-            {
-                clock.paused = true;
-            }
+    //private void Update()
+    //{
+    //    if (isLerping)
+    //    {
+    //        foreach (var clock in localClocks)
+    //        {
+    //            clock.paused = true;
+    //        }
 
-            if (Vector3.Distance(transform.position, fixedPositions[currentAreaIdx].position) < 0.1)
-            {
-                isLerping = false;
-                foreach (var clock in localClocks)
-                {
-                    clock.paused = false;
-                }
-            }
-        }
+    //        if (Vector3.Distance(transform.position, nextPosition) < 0.1)
+    //        {
+    //            isLerping = false;
+    //            foreach (var clock in localClocks)
+    //            {
+    //                clock.paused = false;
+    //            }
+    //        }
+    //    }
 
-    }
+    //}
 
 }
