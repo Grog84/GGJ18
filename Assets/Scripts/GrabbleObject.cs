@@ -8,7 +8,7 @@ public class GrabbleObject : MonoBehaviour
     public Vector3 grabOffset;
     public bool isGrabbed;
 
-    Rigidbody2D rb;
+    public Rigidbody2D rb;
 
     private void Awake()
     {

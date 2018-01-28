@@ -16,7 +16,7 @@ public class CameraTrigger : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Player")
         {
-            cameraController.MoveToArea(idx);
+            //cameraController.MoveToArea(idx);
         }
     }
 }

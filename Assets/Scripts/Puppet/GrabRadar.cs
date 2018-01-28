@@ -34,7 +34,7 @@ public class GrabRadar : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "GrabbleObject")
+        if (collision.gameObject.tag == "GrabbleObject" || collision.gameObject.tag == "GrabbleObjectBattery")
         {
             bool itemExists = false;
 
@@ -58,8 +58,9 @@ public class GrabRadar : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "GrabbleObject")
+        if (collision.gameObject.tag == "GrabbleObject" || collision.gameObject.tag == "GrabbleObjectBattery")
         {
+            Debug.Log("Battery?");
             int index = nearGrabbleObjects.IndexOf(collision.gameObject);
             if (index != -1)
             {

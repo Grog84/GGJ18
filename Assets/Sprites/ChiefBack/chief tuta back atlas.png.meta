@@ -1,9 +1,14 @@
 fileFormatVersion: 2
 guid: 1f9ad9d7f5086064c8560d9f66b5ee00
-timeCreated: 1517118603
+timeCreated: 1517119703
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: chief tuta back atlas_0
+    21300002: chief tuta back atlas_1
+    21300004: chief tuta back atlas_2
+    21300006: chief tuta back atlas_3
+    21300008: chief tuta back atlas_4
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -40,7 +45,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -66,12 +71,92 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: chief tuta back atlas_0
+      rect:
+        serializedVersion: 2
+        x: 13.930433
+        y: 218.38426
+        width: 68.6006
+        height: 194.69289
+      alignment: 9
+      pivot: {x: 0.49663654, y: 0.498815}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: chief tuta back atlas_1
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 41
+        width: 106
+        height: 193
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: chief tuta back atlas_2
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 197
+        width: 170
+        height: 309
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: chief tuta back atlas_3
+      rect:
+        serializedVersion: 2
+        x: 344.6884
+        y: 25.000002
+        width: 123.71094
+        height: 216
+      alignment: 9
+      pivot: {x: 0.5036872, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: chief tuta back atlas_4
+      rect:
+        serializedVersion: 2
+        x: 402.59348
+        y: 212
+        width: 86.406525
+        height: 189.81302
+      alignment: 9
+      pivot: {x: 0.4965658, y: 0.5031267}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
     outline: []
     physicsShape: []
   spritePackingTag: 
-  userData: 
+  userData: 99425926773918
   assetBundleName: 
   assetBundleVariant: 
