@@ -48,3 +48,6 @@ TagManager:
   - name: Player
     uniqueID: 3762522645
     locked: 0
+  - name: Scientist
+    uniqueID: 660615515
+    locked: 0
