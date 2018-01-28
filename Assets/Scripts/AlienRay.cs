@@ -13,7 +13,8 @@ public class AlienRay : MonoBehaviour
 
     public bool hasReachedGround;
     public bool hasReachedTop;
-    public bool hasHitWall;
+    public bool hasHitWallR;
+    public bool hasHitWallL;
 
     public bool hasCollided;
 
@@ -37,10 +38,19 @@ public class AlienRay : MonoBehaviour
 
     private void Move()
     {
+        float horInput = Input.GetAxis("Horizontal");
+        if (hasHitWallR)
+        {
+            horInput = Mathf.Min(horInput, 0);
+        }
+        if (hasHitWallL)
+        {
+            horInput = Mathf.Max(0, horInput);
+        }
 
         if (Input.GetAxis("Jump") > 0 && chargeReady)
         {
-            transform.position = new Vector3(transform.position.x + speed * Input.GetAxis("Horizontal") * Time.deltaTime, transform.position.y + verticalSpeed * Time.deltaTime, transform.position.z);
+            transform.position = new Vector3(transform.position.x + speed * horInput * Time.deltaTime, transform.position.y + verticalSpeed * Time.deltaTime, transform.position.z);
 
 
             maxCharge -= Time.deltaTime;
@@ -52,10 +62,11 @@ public class AlienRay : MonoBehaviour
         }
         else if (!hasReachedGround)
         {
-            transform.position = new Vector3(transform.position.x + speed * Input.GetAxis("Horizontal") * Time.deltaTime, transform.position.y - verticalSpeed * Time.deltaTime, transform.position.z);
+            transform.position = new Vector3(transform.position.x + speed * horInput * Time.deltaTime, transform.position.y - verticalSpeed * Time.deltaTime, transform.position.z);
         }
+        
         else
-            transform.position = new Vector3(transform.position.x + speed * Input.GetAxis("Horizontal") * Time.deltaTime, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x + speed * horInput * Time.deltaTime, transform.position.y, transform.position.z);
     }
 
     IEnumerator RechargeCO()
@@ -97,11 +108,12 @@ public class AlienRay : MonoBehaviour
         Debug.DrawLine(position + Vector2.up * 0.5f, position + Vector2.up * 0.5f + Vector2.left * feetRaycastLength, Color.red);
         Debug.DrawLine(position + Vector2.down * 0.5f, position + Vector2.down * 0.5f + Vector2.left * feetRaycastLength, Color.red);
 
-        hasHitWall = Physics2D.Raycast(position, Vector2.right, feetRaycastLength, layerMask) ||
+        hasHitWallR = Physics2D.Raycast(position, Vector2.right, feetRaycastLength, layerMask) ||
             Physics2D.Raycast(position + Vector2.up * 0.5f, Vector2.right, feetRaycastLength, layerMask) ||
-            Physics2D.Raycast(position + Vector2.down * 0.5f, Vector2.right, feetRaycastLength, layerMask) ||
+            Physics2D.Raycast(position + Vector2.down * 0.5f, Vector2.right, feetRaycastLength, layerMask);
 
-            Physics2D.Raycast(position, Vector2.left, feetRaycastLength, layerMask) ||
+
+        hasHitWallL = Physics2D.Raycast(position, Vector2.left, feetRaycastLength, layerMask) ||
             Physics2D.Raycast(position + Vector2.up * 0.5f, Vector2.left, feetRaycastLength, layerMask) ||
             Physics2D.Raycast(position + Vector2.down * 0.5f, Vector2.left, feetRaycastLength, layerMask);
 

@@ -95,7 +95,6 @@ public class GrabSystem : MonoBehaviour
             //grabbedObj.GetComponent<GrabbleObject>().rb.velocity = rb.velocity;
             //grabbedObj.transform.parent = null;
 
-            Debug.Log(force);
             grabbedObj.GetComponent<GrabbleObject>().rb.isKinematic = false;
             grabbedObj.GetComponent<GrabbleObject>().rb.AddForce(new Vector2(force.x, force.y));
             grabbedObj = null;

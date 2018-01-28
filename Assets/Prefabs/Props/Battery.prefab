@@ -62,7 +62,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &61818434673977618
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -99,9 +99,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f61752e0350573c47a8aaabba6d11574, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handObject: {fileID: 0}
+  hand: {fileID: 0}
   grabOffset: {x: 0, y: 0, z: 0}
   isGrabbed: 0
+  rb: {fileID: 0}
 --- !u!212 &212568155541322550
 SpriteRenderer:
   m_ObjectHideFlags: 1
