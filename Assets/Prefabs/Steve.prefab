@@ -986,6 +986,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nearGrabbleObjects: []
   nearestGrabbleObject: {fileID: 0}
+  playerGrabSys: {fileID: 0}
 --- !u!114 &114176441169061280
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1123,6 +1124,7 @@ MonoBehaviour:
   isObjectAtReach: 0
   isGrabbing: 0
   grabbedObj: {fileID: 0}
+  switchCollider: []
 --- !u!114 &114521208786260958
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1199,6 +1201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabSystem: {fileID: 114518764524471354}
+  handPosition: {fileID: 0}
 --- !u!114 &114819870707144066
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1211,6 +1214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabSystem: {fileID: 114518764524471354}
+  handPosition: {fileID: 0}
 --- !u!114 &114914345753322320
 MonoBehaviour:
   m_ObjectHideFlags: 1
