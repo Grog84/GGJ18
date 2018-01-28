@@ -10,6 +10,7 @@ public class MenuManager : MonoBehaviour {
     public Image fadeEffect;
     public GameObject menuFinished;
     public Animator menuAnimator;
+    public AudioSource menusource;
 
     private void Awake()
     {
@@ -20,6 +21,7 @@ public class MenuManager : MonoBehaviour {
     void Start() {
 
         fadeEffect.DOFade(0f, 3f);
+        menusource.DOFade(1f, 2f);
         StartCoroutine(StartAnimationCO());
     }
 
@@ -46,6 +48,7 @@ public class MenuManager : MonoBehaviour {
     public void FadeOut()
     {
         fadeEffect.DOFade(1f, 3f);
+        menusource.DOFade(0f, 2f);
         StartCoroutine(FadeOutCO());
     }
 
