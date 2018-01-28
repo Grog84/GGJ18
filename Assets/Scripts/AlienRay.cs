@@ -13,6 +13,7 @@ public class AlienRay : MonoBehaviour
 
     public bool hasReachedGround;
     public bool hasReachedTop;
+    public bool hasHitWall;
 
     public bool hasCollided;
 
@@ -82,6 +83,28 @@ public class AlienRay : MonoBehaviour
             Physics2D.Raycast(position + Vector2.left * 0.5f, Vector2.down, feetRaycastLength, layerMask);
         
         hasReachedTop = Physics2D.Raycast(position, Vector2.up, headtRaycastLength, layerMask);
+    }
+
+    private void CheckWalls()
+    {
+        Vector2 position = new Vector2(transform.position.x, transform.position.y);
+
+        Debug.DrawLine(position, position + Vector2.right * feetRaycastLength, Color.red);
+        Debug.DrawLine(position + Vector2.up * 0.5f, position + Vector2.up * 0.5f + Vector2.right * feetRaycastLength, Color.red);
+        Debug.DrawLine(position + Vector2.down * 0.5f, position + Vector2.down * 0.5f + Vector2.right * feetRaycastLength, Color.red);
+
+        Debug.DrawLine(position, position + Vector2.left * feetRaycastLength, Color.red);
+        Debug.DrawLine(position + Vector2.up * 0.5f, position + Vector2.up * 0.5f + Vector2.left * feetRaycastLength, Color.red);
+        Debug.DrawLine(position + Vector2.down * 0.5f, position + Vector2.down * 0.5f + Vector2.left * feetRaycastLength, Color.red);
+
+        hasHitWall = Physics2D.Raycast(position, Vector2.right, feetRaycastLength, layerMask) ||
+            Physics2D.Raycast(position + Vector2.up * 0.5f, Vector2.right, feetRaycastLength, layerMask) ||
+            Physics2D.Raycast(position + Vector2.down * 0.5f, Vector2.right, feetRaycastLength, layerMask) ||
+
+            Physics2D.Raycast(position, Vector2.left, feetRaycastLength, layerMask) ||
+            Physics2D.Raycast(position + Vector2.up * 0.5f, Vector2.left, feetRaycastLength, layerMask) ||
+            Physics2D.Raycast(position + Vector2.down * 0.5f, Vector2.left, feetRaycastLength, layerMask);
+
     }
 
     void UpdatePlayerPosition()

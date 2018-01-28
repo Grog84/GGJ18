@@ -5,6 +5,7 @@ using UnityEngine;
 public class GrabSystem : MonoBehaviour
 {
     public GrabRadar m_Radar;
+    AlienRay alienray;
 
     public bool isObjectAtReach = false;
     public bool isGrabbing;
@@ -13,7 +14,18 @@ public class GrabSystem : MonoBehaviour
     Vector3 grabbedObjOffset;
     Transform nearHandTransform;
 
+    Vector3[] lastPositions = new Vector3[10];
+    int lastPositionIdx = 0;
+
+    Rigidbody2D rb;
+
     public BoxCollider2D[] switchCollider;
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        alienray = FindObjectOfType<AlienRay>();
+    }
 
     public void SetAtReach(GameObject reachableObject, Transform handTransform)
     {
@@ -39,13 +51,19 @@ public class GrabSystem : MonoBehaviour
 
         if (isGrabbing)
         {
+            lastPositions[lastPositionIdx] = alienray.transform.position;
+            lastPositionIdx++;
+            lastPositionIdx %= 5;
+
             if (m_Radar.nearestGrabbleObject)
             {
+
+
                 //Rigidbody2D goRB = m_Radar.nearestGrabbleObject.GetComponent<Rigidbody2D>();
                 //var direction = transform.position - goRB.transform.position;
                 //goRB.AddForce(direction*10f);
 
-                m_Radar.nearestGrabbleObject.transform.position = nearHandTransform.position + grabbedObjOffset;
+                //m_Radar.nearestGrabbleObject.transform.position = nearHandTransform.position + grabbedObjOffset;
 
             }
             else
@@ -56,7 +74,30 @@ public class GrabSystem : MonoBehaviour
         {
             isGrabbing = false;
             grabbedObj.GetComponent<GrabbleObject>().StopFollowing();
+
+            Vector3 force = Vector3.zero;
+            Vector3 diff = Vector3.zero;
+
+            if (lastPositionIdx == 0)
+            {
+                diff = (lastPositions[9] - lastPositions[0]);
+                var direction = diff.normalized;
+                force = direction * diff.sqrMagnitude * 10f; // hard coded value
+
+            }
+            else
+            {
+                diff = (lastPositions[0] - lastPositions[9]);
+                var direction = diff.normalized;
+                force = direction * diff.sqrMagnitude * 10f; // hard coded value
+            }
+
+            //grabbedObj.GetComponent<GrabbleObject>().rb.velocity = rb.velocity;
             //grabbedObj.transform.parent = null;
+
+            Debug.Log(force);
+            grabbedObj.GetComponent<GrabbleObject>().rb.isKinematic = false;
+            grabbedObj.GetComponent<GrabbleObject>().rb.AddForce(new Vector2(force.x, force.y));
             grabbedObj = null;
             StartCoroutine(ReEnableColliders());
             return;
