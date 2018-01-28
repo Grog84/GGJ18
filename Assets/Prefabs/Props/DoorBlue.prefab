@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4221213224925050}
   - component: {fileID: 212073825136259266}
   - component: {fileID: 61134282330106348}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DoorBlueUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4680978271252326}
   - component: {fileID: 212908183880324994}
   - component: {fileID: 61633422611858082}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DoorBlueDown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4712212844646408}
   - component: {fileID: 114304632612394128}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DoorBlue
   m_TagString: Untagged
   m_Icon: {fileID: 0}

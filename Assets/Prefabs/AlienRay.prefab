@@ -79,11 +79,14 @@ MonoBehaviour:
     m_Bits: 256
   hasReachedGround: 0
   hasReachedTop: 0
+  hasHitWallR: 0
+  hasHitWallL: 0
   hasCollided: 0
   chargeReady: 1
   maxCharge: 4
-  feetRaycastLength: 0.8
+  feetRaycastLength: 0.5
   headtRaycastLength: 0.5
+  widthRaycastLength: 1
 --- !u!212 &212182443371899826
 SpriteRenderer:
   m_ObjectHideFlags: 1
