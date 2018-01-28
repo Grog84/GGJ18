@@ -50,25 +50,37 @@ public class AlienRay : MonoBehaviour
             horInput = Mathf.Max(0, horInput);
         }
 
-        if (Input.GetAxis("Vertical") != 0 /*&& chargeReady*/)
+        if (!hasReachedTop)
         {
-            transform.position = new Vector3(transform.position.x + speed * horInput * Time.deltaTime, transform.position.y + verticalSpeed * Time.deltaTime, transform.position.z);
-
-
-            maxCharge -= Time.deltaTime;
-            if (maxCharge <= 0)
+            if (Input.GetAxis("Vertical") != 0 /*&& chargeReady*/)
             {
-                chargeReady = false;
-                StartCoroutine(RechargeCO());
+                transform.position = new Vector3(transform.position.x + speed * horInput * Time.deltaTime, transform.position.y + verticalSpeed * Time.deltaTime, transform.position.z);
+                return;
+
+                //maxCharge -= Time.deltaTime;
+                //if (maxCharge <= 0)
+                //{
+                //    chargeReady = false;
+                //    StartCoroutine(RechargeCO());
+                //}
+            }
+            else if (!hasReachedGround)
+            {
+                transform.position = new Vector3(transform.position.x + speed * horInput * Time.deltaTime, transform.position.y - verticalSpeed * Time.deltaTime, transform.position.z);
+                return;
             }
         }
-        else if (!hasReachedGround)
+
+        else if (hasReachedTop)
         {
             transform.position = new Vector3(transform.position.x + speed * horInput * Time.deltaTime, transform.position.y - verticalSpeed * Time.deltaTime, transform.position.z);
+            return;
         }
-        
         else
+        {
             transform.position = new Vector3(transform.position.x + speed * horInput * Time.deltaTime, transform.position.y, transform.position.z);
+            return;
+        }
     }
 
     IEnumerator RechargeCO()
@@ -94,8 +106,11 @@ public class AlienRay : MonoBehaviour
         hasReachedGround = Physics2D.Raycast(position, Vector2.down, feetRaycastLength, layerMask) || 
             Physics2D.Raycast(position + Vector2.right * 0.5f, Vector2.down, feetRaycastLength, layerMask) || 
             Physics2D.Raycast(position + Vector2.left * 0.5f, Vector2.down, feetRaycastLength, layerMask);
-        
-        hasReachedTop = Physics2D.Raycast(position, Vector2.up, headtRaycastLength, layerMask);
+
+        Debug.DrawLine(position, position + Vector2.up * headtRaycastLength, Color.red);
+        hasReachedTop = Physics2D.Raycast(position, Vector2.up, headtRaycastLength, layerMask) ||
+            Physics2D.Raycast(position + Vector2.right * 0.5f, Vector2.up, headtRaycastLength, layerMask) ||
+            Physics2D.Raycast(position + Vector2.left * 0.5f, Vector2.up, headtRaycastLength, layerMask);
     }
 
     private void CheckWalls()
