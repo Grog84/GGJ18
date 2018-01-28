@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class TriggerEffect : MonoBehaviour
 {
-     [HideInInspector] public bool isActive = false;
+    [HideInInspector] public bool isActive = false;
 }

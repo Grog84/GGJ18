@@ -23,11 +23,15 @@ public class ScientistScript : MonoBehaviour
         pointA = transform.GetChild(0).transform.position;
         pointB = transform.GetChild(1).transform.position;
         currentSpeed = speed;
+
+        Vector3 scaleTemp = transform.localScale;
+        scaleTemp.x *= -1;
+        transform.localScale = scaleTemp;
     }
 
     void LateUpdate()
     {
-        StartCoroutine(Pause());
+        //StartCoroutine(Pause());
 
         if (transform.position.x <= pointA.x || transform.position.x >= pointB.x)
         {
@@ -57,9 +61,9 @@ public class ScientistScript : MonoBehaviour
         currentSpeed = speed;
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    /*void OnCollisionEnter2D(Collision2D collision)
     {
         leftMovement = !leftMovement;
-        transform.localScale = new Vector3( transform.localScale.x * -1f, transform.localScale.y, transform.localScale.z);
-    }
+        transform.localScale = new Vector3(transform.localScale.x * -1f, transform.localScale.y, transform.localScale.z);
+    }*/
 }
