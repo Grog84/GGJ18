@@ -51,3 +51,6 @@ TagManager:
   - name: Scientist
     uniqueID: 660615515
     locked: 0
+  - name: BackScientist
+    uniqueID: 1558071813
+    locked: 0
