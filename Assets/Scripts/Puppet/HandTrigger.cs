@@ -9,6 +9,19 @@ public class HandTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        grabSystem.SetAtReach(gameObject, transform);
+        if (collision.gameObject.tag == "GrabbleObject")
+        {
+            Debug.Log("I can grab!");
+            grabSystem.SetAtReach(gameObject, transform);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "GrabbleObject")
+        {
+            Debug.Log("Oh no....!");
+            grabSystem.SetNomoreAtReach();
+        }
     }
 }

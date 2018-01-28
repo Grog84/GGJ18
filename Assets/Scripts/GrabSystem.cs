@@ -16,9 +16,14 @@ public class GrabSystem : MonoBehaviour
     public void SetAtReach(GameObject reachableObject, Transform handTransform)
     {
  
-            nearHandTransform = handTransform;
-            isObjectAtReach = true;
+        nearHandTransform = handTransform;
+        isObjectAtReach = true;
         
+    }
+
+    public void SetNomoreAtReach()
+    {
+        isObjectAtReach = false;
     }
 
     private void Update()
@@ -34,26 +39,39 @@ public class GrabSystem : MonoBehaviour
         {
             if (m_Radar.nearestGrabbleObject)
             {
-                Rigidbody2D goRB = m_Radar.nearestGrabbleObject.GetComponent<Rigidbody2D>();
-                var direction = goRB.transform.position - transform.position;
-                goRB.AddForce(direction*10f);
+                //Rigidbody2D goRB = m_Radar.nearestGrabbleObject.GetComponent<Rigidbody2D>();
+                //var direction = transform.position - goRB.transform.position;
+                //goRB.AddForce(direction*10f);
 
-                //m_Radar.nearestGrabbleObject.transform.position = nearHandTransform.position + grabbedObjOffset;
+                m_Radar.nearestGrabbleObject.transform.position = nearHandTransform.position + grabbedObjOffset;
+
             }
             else
                 m_Radar.nearestGrabbleObject = null;
         }
 
-        if (Input.GetKey(KeyCode.C) && isGrabbing)
+        if (Input.GetKeyUp(KeyCode.C) && isGrabbing)
         {
             isGrabbing = false;
+            grabbedObj.GetComponent<GrabbleObject>().StopFollowing();
+            //grabbedObj.transform.parent = null;
+            grabbedObj = null;
             return;
         }
     }
 
     void GrabObj(GameObject obj)
     {
-        grabbedObjOffset = obj.transform.position - nearHandTransform.position;
+        if (grabbedObj == null)
+        {
+            grabbedObj = obj;
+            grabbedObjOffset = obj.transform.position - nearHandTransform.position;
+            //obj.GetComponent<GrabbleObject>().isGrabbed = true;
+            obj.GetComponent<GrabbleObject>().StartFollowing(grabbedObjOffset, nearHandTransform);
+
+            // obj.transform.parent = nearHandTransform;
+
+        }
     }
 
 }

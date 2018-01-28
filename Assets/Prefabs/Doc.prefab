@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 114427707563238150}
   m_Layer: 0
   m_Name: Doc
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -464,7 +464,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1203042644029012}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.870614, y: -0.1344223, z: -0.00007214607}
+  m_LocalPosition: {x: -5.0198665, y: 0.7205609, z: -0.00007214607}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4030622219531786}
@@ -582,7 +582,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1481456851161102}
-  m_LocalRotation: {x: 0, y: 0, z: 0.9910135, w: 0.13376169}
+  m_LocalRotation: {x: 0, y: 0, z: 0.9910135, w: 0.13376157}
   m_LocalPosition: {x: 1.6119404, y: 0.3782003, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -930,7 +930,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.6000001
+  m_Length: 0.6
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4660317955304672}
   m_AttachedIK: {fileID: 114870777190539532}
@@ -990,7 +990,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.40000007
+  m_Length: 0.40000004
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4449889501898070}
   m_AttachedIK: {fileID: 0}
