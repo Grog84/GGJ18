@@ -42,7 +42,7 @@ public class GrabSystem : MonoBehaviour
 
     private void Update()
     {
-        if (isObjectAtReach && Input.GetKey(KeyCode.C) && !isGrabbing)
+        if (isObjectAtReach && Input.GetKey(KeyCode.Space) && !isGrabbing)
         {
             isGrabbing = true;
             GrabObj(m_Radar.nearestGrabbleObject);
@@ -70,7 +70,7 @@ public class GrabSystem : MonoBehaviour
                 m_Radar.nearestGrabbleObject = null;
         }
 
-        if (Input.GetKeyUp(KeyCode.C) && isGrabbing)
+        if (Input.GetKeyUp(KeyCode.Space) && isGrabbing)
         {
             isGrabbing = false;
             grabbedObj.GetComponent<GrabbleObject>().StopFollowing();
