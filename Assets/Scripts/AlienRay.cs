@@ -34,6 +34,7 @@ public class AlienRay : MonoBehaviour
         Move();
         UpdatePlayerPosition();
         CheckGround();
+        CheckWalls();
     }
 
     private void Move()

@@ -53,7 +53,7 @@ public class GrabSystem : MonoBehaviour
         {
             lastPositions[lastPositionIdx] = alienray.transform.position;
             lastPositionIdx++;
-            lastPositionIdx %= 5;
+            lastPositionIdx %= 10;
 
             if (m_Radar.nearestGrabbleObject)
             {

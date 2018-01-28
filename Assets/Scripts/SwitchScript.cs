@@ -18,7 +18,7 @@ public class SwitchScript : MonoBehaviour
     {
         var myAngle = transform.rotation.eulerAngles.z;
         
-        if (myAngle < 300)
+        if (myAngle < 200)
         {
             if (myAngle >= 40)
             {
